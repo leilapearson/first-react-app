@@ -1,0 +1,40 @@
+{
+  "name": "git-permissions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "tape -r babel-register -r babel-polyfill app/**/*.test.js | faucet",
+    "start": "electron .",
+    "watch": "webpack --config webpack.config.js --watch --progress"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "electron-reload": "^1.1.0",
+    "extend-tape": "^1.2.0",
+    "faucet": "0.0.1",
+    "react-addons-test-utils": "^15.4.2",
+    "tape": "^4.6.3",
+    "tape-jsx-equals": "^1.0.0",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "bootswatch": "^3.3.7",
+    "classnames": "^2.2.5",
+    "electron": "^1.4.14",
+    "jquery": "^3.1.1",
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-api-middleware": "^1.0.2"
+  }
+}
