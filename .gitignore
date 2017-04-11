@@ -4,3 +4,6 @@ node_modules/
 # Webpack output
 dist/
 
+# IDE configuration
+.vscode/
+.idea/

@@ -1,6 +1,5 @@
 'use strict'
 
-
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -9,15 +8,21 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path')
 const url = require('url')
 
-require('electron-reload')(__dirname, {
-  electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
-});
+// Uncomment if you want the app to auto-reload when it is rebuilt
+// You can manually reload from the menu otherwise
+// require('electron-reload')(__dirname, {
+//  electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+// });
 
 var mainWindow = null;
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 1024, height: 768});
+  mainWindow = new BrowserWindow({ 
+    width: 1280, 
+    height: 800,
+    icon: path.join(__dirname, 'audit-icon_64x64.png')
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -26,8 +31,9 @@ function createWindow () {
     slashes: true
   }));
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // Open the DevTools. - Only needed if you want them open by default. 
+  // They can be opened manually from the menu.
+  //mainWindow.webContents.openDevTools();
   
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

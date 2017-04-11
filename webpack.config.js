@@ -1,5 +1,5 @@
 module.exports = {
-    entry: "./app/index.js",
+    entry: ['babel-polyfill', './app/index.js'],
     output: {
         path: "dist/assets",
         filename: "bundle.js",
@@ -13,7 +13,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: ['babel'],
                 query: {
-                    presets: ['latest', 'stage-0', 'react']
+                    presets: ['env', 'stage-0', 'react']
                 }
             }
         ]

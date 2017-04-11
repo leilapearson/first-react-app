@@ -3,21 +3,27 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { App } from './components/app.component';
-import configureStore from './configureStore';
+import { createStore, applyMiddleware } from 'redux';
+import { apiMiddleware } from 'redux-api-middleware';
+import { createLogger } from 'redux-logger';
+import thunk  from 'redux-thunk';
+import reducer from './reducers/index';
+import App from './components/App';
 
-// Actions, reducer, and action creators
-// See: https://github.com/erikras/ducks-modular-redux 
-import reducer from './modules/app.module';
+const logger = createLogger({
+    collapsed: true
+})
 
 // Create store with middleware
-const store = configureStore();
+const store = createStore(
+    reducer,
+    applyMiddleware(thunk, apiMiddleware, logger)
+);
 
 // Render to the DOM
 render( 
     <Provider store={store}>
-        <App / >,
+        <App />
     </Provider>,
     document.getElementById('react-container')
 );
-

@@ -1,40 +1,58 @@
 {
-  "name": "git-permissions",
+  "name": "git-permissions-auditor",
+  "productName": "Git Permissions Auditor",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "scripts": {
-    "test": "tape -r babel-register -r babel-polyfill app/**/*.test.js | faucet",
-    "start": "electron .",
-    "watch": "webpack --config webpack.config.js --watch --progress"
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/leilapearson/first-react-app.git"
   },
-  "author": "",
+  "scripts": {
+    "start": "electron .",
+    "test": "tape -r babel-register -r babel-polyfill app/**/*.test.js | faucet",
+    "test-watch": "tape-watch -r babel-register -r babel-polyfill app/**/*.test.js | faucet",
+    "bundle": "webpack --config webpack.config.js --progress",
+    "bundle-watch": "webpack --config webpack.config.js --watch --progress",
+    "lint": "eslint -- ext .js --ext .jsx app/"
+  },
+  "author": "Leila Pearson",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
-    "babel-preset-latest": "^6.22.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-env": "^1.3.2",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.22.0",
     "electron-reload": "^1.1.0",
+    "eslint": "^3.17.1",
+    "eslint-plugin-react": "^6.10.0",
     "extend-tape": "^1.2.0",
     "faucet": "0.0.1",
     "react-addons-test-utils": "^15.4.2",
     "tape": "^4.6.3",
     "tape-jsx-equals": "^1.0.0",
+    "tape-watch": "^2.2.4",
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "better-react-spinkit": "^2.0.0-6",
     "bootswatch": "^3.3.7",
     "classnames": "^2.2.5",
     "electron": "^1.4.14",
+    "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.1.1",
+    "ramda": "0.23.0",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
-    "redux-api-middleware": "^1.0.2"
+    "redux-api-middleware": "^1.0.2",
+    "redux-logger": "^3.0.0",
+    "redux-thunk": "^2.2.0"
   }
 }
