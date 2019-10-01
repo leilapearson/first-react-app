@@ -6,7 +6,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url" : "https://github.com/leilapearson/first-react-app.git"
+    "url": "https://github.com/leilapearson/first-react-app.git"
   },
   "scripts": {
     "start": "electron .",
@@ -28,7 +28,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.22.0",
     "electron-reload": "^1.1.0",
-    "eslint": "^3.17.1",
+    "eslint": "^3.18.2",
     "eslint-plugin-react": "^6.10.0",
     "extend-tape": "^1.2.0",
     "faucet": "0.0.1",
